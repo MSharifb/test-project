@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    
+
+        @foreach (var item in ViewBag.request)
+        {
+    <div class="col-md-4">
+        <div class="well">
+            <h2>@item.MassageTitle</h2>
+            <p>
+                @item.MassageBody
+            </p>
+            @*<p>@item.GroupID</p>*@
+            <p>@item.ContactNumber</p>
+            <p>@item.Email</p>
+            <p>@item.Address</p>
+            <p><a class="btn btn-default" href="#">View Details &raquo;</a></p>
+        </div>
+       
+    </div>
+        }
+        
+    </div>
+    
+   
+

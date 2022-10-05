@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Final.Models.Request>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MassageTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MassageBody)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReqDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroup.GroupName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MassageTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MassageBody)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReqDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodGroup.GroupName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReqID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReqID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReqID })
+        </td>
+    </tr>
+}
+
+</table>
